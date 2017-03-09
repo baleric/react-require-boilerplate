@@ -4,22 +4,46 @@ define(["jquery","react", "ReactDOM",'jsx!global'] , function ($,React,ReactDOM,
     //init function for page controller js
     function init(_this) {
       
-      var Weekly = React.createClass({       
+      var Weekly = React.createClass({    
+
         getInitialState() {
-          return {};
+          return {
+            data: []
+          };
         },
 
         componentDidMount() {
         },
 
         componentWillMount() {
+            $.ajax({
+                url: _this.data('url'),
+                dataType: 'json',
+                cache: false,
+                success: function(data) {
+                    this.setState({data: data}); // Notice this
+                    console.log(this.state.data);
+                }.bind(this),
+                error: function(xhr, status, err) {
+                    console.error(_this.data('url'), status, err.toString());
+                }.bind(this)
+            });
+        },
+
+        componentDidUpdate() {
+
         },
 
         render() {
           return (
-            <p>
-              Weekly Income Component (generated id = {this.props.message}) and time = {new Date().toLocaleTimeString()}
-            </p>
+            <div>
+                <div>
+                Weekly Income Component (generated id = {this.props.message}) and time = {new Date().toLocaleTimeString()}
+                </div>
+                <div>
+                    <strong>{this.state.data.title}</strong>
+                </div>
+            </div>
           )
         }
       });
@@ -33,9 +57,7 @@ define(["jquery","react", "ReactDOM",'jsx!global'] , function ($,React,ReactDOM,
         ReactDOM.render(<Weekly message={newID} />, document.getElementById(newID));
       }
       
-    }
-
-    
+    }   
 
     return {        
         init: init
