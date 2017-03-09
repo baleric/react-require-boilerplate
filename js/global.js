@@ -3,11 +3,21 @@ define(["jquery"] , function ($) {
 
     //init function for page controller js
     function init() {
-    	if ($('[data-component="weekly"]').length > 0) {
-			require(['jsx!components/income/weekly'], function (w) {
-				w.init()
+    	$('[data-component]').each(function(){
+    		var _this = $(this)
+    		require(['jsx!/js/components/'+$(this).data('component')], function (w) {
+				w.init(_this)
 			});
-    	}
+    	});
+
+    	$('[data-template]').each(function(){
+    		var _this = $(this)
+    		require(['jsx!/js/template/'+$(this).data('template')], function (w) {
+				w.init(_this)
+			});
+    	});
+
+    	
     }
 
     function genId(_this){
@@ -19,7 +29,6 @@ define(["jquery"] , function ($) {
 	  	if (_this.prop('id').length == 0) {
 	  		var newId = s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
 	  		_this.attr('id',newId)
-	  		console.log(newId)
 	  		return newId
 	  	} else {
 	  		return _this.attr('id')

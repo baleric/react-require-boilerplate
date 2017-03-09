@@ -1,16 +1,44 @@
-import React, { Component } from 'react';
-import './header.css';
-import $ from "jquery";
+//import additional scripts
+define(["jquery","react", "ReactDOM",'jsx!global'] , function ($,React,ReactDOM,global) {
 
-class Header extends Component {
-  render() {
-    return (
+    //init function for page controller js
+    function init(_this) {
+      
+      var Header = React.createClass({       
+        getInitialState() {
+          return {};
+        },
 
-      <div className="header">This is the header</div>
+        componentDidMount() {
+        },
 
-    );
-  }
+        componentWillMount() {
+        },
 
-}
+        render() {
+          return (
+            <p>Header Template (generated id = {this.props.message})</p>
+          )
+        }
+      });
 
-export default Header
+		var newID = global.genId(_this);
+		ReactDOM.render(<Header message={newID} />, document.getElementById(newID));
+      
+    }
+
+    return {        
+        init: init
+    }
+
+});
+
+
+
+
+
+
+
+
+
+    

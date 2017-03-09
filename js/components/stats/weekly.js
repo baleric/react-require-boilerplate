@@ -17,7 +17,7 @@ define(["jquery","react", "ReactDOM",'jsx!global'] , function ($,React,ReactDOM,
 
         render() {
           return (
-            <p>Weekly Income Component (generated id = {this.props.message})</p>
+             <p>Weekly Statistics Component (generated id = {this.props.message})</p>
           )
         }
       });
