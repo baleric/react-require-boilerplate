@@ -17,18 +17,25 @@ define(["jquery","react", "ReactDOM",'jsx!global'] , function ($,React,ReactDOM,
 
         render() {
           return (
-            <p>Weekly Income Component (generated id = {this.props.message})</p>
+            <p>
+              Weekly Income Component (generated id = {this.props.message}) and time = {new Date().toLocaleTimeString()}
+            </p>
           )
         }
       });
-
-
       
-      var newID = global.genId(_this);
-      ReactDOM.render(<Weekly message={newID} />, document.getElementById(newID));
-      
+      setInterval(function(){
+        doRender(_this);
+      }, (Math.floor(Math.random() * 6) + 1 ) * 1000)
+
+      function doRender(_this){
+        var newID = global.genId(_this);
+        ReactDOM.render(<Weekly message={newID} />, document.getElementById(newID));
+      }
       
     }
+
+    
 
     return {        
         init: init

@@ -15,9 +15,7 @@ define(["jquery"] , function ($) {
     		require(['jsx!/js/template/'+$(this).data('template')], function (w) {
 				w.init(_this)
 			});
-    	});
-
-    	
+    	});    	
     }
 
     function genId(_this){
