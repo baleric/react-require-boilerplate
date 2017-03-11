@@ -2,19 +2,26 @@
 <html>
   <head>
     <title>My Application</title>   
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
   </head>
   <body id="body" data-controller="index">
 
   	<header data-template="header"></header>
-    
-    <div data-component="income/weekly" data-url="https://jsonplaceholder.typicode.com/posts/1"></div>
-    <div data-component="income/weekly" data-url="https://jsonplaceholder.typicode.com/posts/2"></div>
-    <div data-component="income/weekly" data-url="https://jsonplaceholder.typicode.com/posts/3"></div>
-    <div data-component="income/weekly" data-url="https://jsonplaceholder.typicode.com/posts/4"></div>
 
     <div data-component="stats/weekly"></div>
+    
+    <div class="clearfix">
+	    <div data-component="income/weekly" id="hardCodedId" data-url="https://jsonplaceholder.typicode.com/posts/"></div>
+	    <div data-component="income/weekly" data-url="https://jsonplaceholder.typicode.com/posts/"></div>
+	    <div data-component="income/weekly" data-url="https://jsonplaceholder.typicode.com/posts/"></div>
+	    <div data-component="income/weekly" data-url="https://jsonplaceholder.typicode.com/posts/"></div>
+	</div>
 
-    <script src="/js/libs/require.js" data-main="/js/boot.js"></script>
+  	<footer data-template="footer"></header>
+
+    <script src="/js/libs/require.js" data-main="/js/boot.js"></script> 
 
   </body>
 </html>

@@ -1,0 +1,52 @@
+/*import templates*/
+body {
+  font-family: arial, sans-serif;
+  background-color: #eee;
+  padding: 0px;
+  margin: 0px; }
+  body .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+header {
+  background-color: #ccc;
+  border: 1px solid red;
+  text-align: center; }
+
+[data-template="footer"] {
+  background-color: #ccc;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  text-align: center; }
+
+/*import components*/
+[data-component="income/weekly"] {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 40px 40px 0px 40px;
+  box-sizing: border-box;
+  float: left;
+  width: 21%;
+  background-color: white;
+  min-height: 300px;
+  margin: 0px 2%; }
+  [data-component="income/weekly"] .demoTitle {
+    text-align: center; }
+  [data-component="income/weekly"] .refreshBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+  [data-component="income/weekly"] .demoTitle h2 {
+    padding-top: 20px; }
+  [data-component="income/weekly"] .grey {
+    color: #999;
+    font-size: 12px; }
+  [data-component="income/weekly"] .updateTime {
+    padding-bottom: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px; }
+  [data-component="income/weekly"] .postBackData {
+    margin-top: 20px; }

@@ -1,10 +1,10 @@
 //import additional scripts
-define(["jquery","react", "ReactDOM",'jsx!global'] , function ($,React,ReactDOM,global) {
+define(["jquery","react", "ReactDOM",'global'] , function ($,React,ReactDOM,global) {
 
     //init function for page controller js
     function init(_this) {
       
-      var Weekly = React.createClass({       
+      var Header = React.createClass({       
         getInitialState() {
           return {};
         },
@@ -17,16 +17,13 @@ define(["jquery","react", "ReactDOM",'jsx!global'] , function ($,React,ReactDOM,
 
         render() {
           return (
-             <p>Weekly Statistics Component (generated id = {this.props.message})</p>
+            <p>Header Template (generated id = {this.props.message})</p>
           )
         }
       });
 
-
-      
-      var newID = global.genId(_this);
-      ReactDOM.render(<Weekly message={newID} />, document.getElementById(newID));
-      
+		var newID = global.genId(_this);
+		ReactDOM.render(<Header message={newID} />, document.getElementById(newID));
       
     }
 
