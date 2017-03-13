@@ -13,17 +13,16 @@ define(["jquery", "react", "ReactDOM", 'global'], function ($, React, ReactDOM, 
 
   //init function for page controller js
   function init(_this) {
-    var Weekly = function (_React$Component) {
-      _inherits(Weekly, _React$Component);
+    var Search = function (_React$Component) {
+      _inherits(Search, _React$Component);
 
-      function Weekly(props) {
-        _classCallCheck(this, Weekly);
+      function Search(props) {
+        _classCallCheck(this, Search);
 
-        return _possibleConstructorReturn(this, (Weekly.__proto__ || Object.getPrototypeOf(Weekly)).call(this, props));
-        // This binding is necessary to make `this` work in the callback
+        return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
       }
 
-      _createClass(Weekly, [{
+      _createClass(Search, [{
         key: "componentDidMount",
         value: function componentDidMount() {}
       }, {
@@ -31,19 +30,22 @@ define(["jquery", "react", "ReactDOM", 'global'], function ($, React, ReactDOM, 
         value: function render() {
           return React.createElement(
             "div",
-            null,
-            "Placeholder new for new Component (ID : ",
-            this.props.message,
-            ")"
+            { className: "" },
+            "id = ",
+            this.props.message
           );
         }
       }]);
 
-      return Weekly;
+      return Search;
     }(React.Component);
 
-    var newID = global.genId(_this);
-    ReactDOM.render(React.createElement(Weekly, { message: newID }), document.getElementById(newID));
+    function renderComponent() {
+      var newID = global.genId(_this);
+      ReactDOM.render(React.createElement(Search, { message: newID }), document.getElementById(newID));
+    }
+
+    renderComponent();
   }
 
   return {

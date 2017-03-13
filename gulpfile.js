@@ -35,7 +35,7 @@ gulp.task('start', ['browserSync', 'sass'], function() {
 gulp.task('convertJSX', function() {
   return gulp.src(['./js/**/*.jsx'])
     .pipe(babel({
-      plugins: ['transform-react-jsx']
+      presets : ['es2015']
     }))
     .pipe(gulp.dest('./js/'));
 });
