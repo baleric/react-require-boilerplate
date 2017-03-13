@@ -4,27 +4,32 @@ define(["jquery","react", "ReactDOM",'global'] , function ($,React,ReactDOM,glob
     //init function for page controller js
     function init(_this) {
       
-      var Header = React.createClass({       
-        getInitialState() {
-          return {};
-        },
+      class Header extends React.Component {
+      
+        constructor(props) {
+          super(props);
+          this.state = {}
+        }
 
         componentDidMount() {
-        },
+        }
 
         componentWillMount() {
-        },
+        }
 
         render() {
           return (
-            <p>Header Template (generated id = {this.props.message})</p>
+            <p>
+              Header Template (ID : {this.props.message})
+            </p>
           )
         }
-      });
+      }
 
-		var newID = global.genId(_this);
-		ReactDOM.render(<Header message={newID} />, document.getElementById(newID));
+      var newID = global.genId(_this);
+      ReactDOM.render(<Header message={newID} />, document.getElementById(newID));
       
+
     }
 
     return {        

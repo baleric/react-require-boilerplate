@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 //import additional scripts
 define(["jquery","react", "ReactDOM",'global'] , function ($,React,ReactDOM,global) {
 
@@ -15,7 +13,7 @@ define(["jquery","react", "ReactDOM",'global'] , function ($,React,ReactDOM,glob
           this.state = { 
             data : [],
             loading  : true,
-            loadingText : 'Loading..'
+            loadingText : 'Loading JSON..'
           }
         }
 
@@ -34,11 +32,11 @@ define(["jquery","react", "ReactDOM",'global'] , function ($,React,ReactDOM,glob
                     this.setState({
                         data: data,
                         loading: false,
-                        loadingText : 'Getting new JSON..'
+                        loadingText : 'Getting new JSON.. '
                     });                 
                 }.bind(this),
                 error: function(xhr, status, err) {
-
+                  console.log(err)
                 }.bind(this)
             });
  
@@ -95,13 +93,3 @@ define(["jquery","react", "ReactDOM",'global'] , function ($,React,ReactDOM,glob
     }
 
 });
-
-
-
-
-
-
-
-
-
-    

@@ -4,26 +4,24 @@ define(["jquery","react", "ReactDOM",'global'] , function ($,React,ReactDOM,glob
     //init function for page controller js
     function init(_this) {
       
-      var Weekly = React.createClass({       
-        getInitialState() {
-          return {};
-        },
+      class Weekly extends React.Component {
 
-        componentDidMount() {
-        },
+        constructor(props) {
+          super(props);
+          // This binding is necessary to make `this` work in the callback
+        }
 
-        componentWillMount() {
-        },
+        componentDidMount(){} 
 
         render() {
           return (
-             <p>Weekly Statistics Component (generated id = {this.props.message})</p>
+            <div>
+              Placeholder new for new Component (ID : {this.props.message})
+            </div>
           )
         }
-      });
+      }
 
-
-      
       var newID = global.genId(_this);
       ReactDOM.render(<Weekly message={newID} />, document.getElementById(newID));
       

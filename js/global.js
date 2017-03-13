@@ -5,18 +5,19 @@ define(["jquery"] , function ($) {
     function init() {
     	$('[data-component]').each(function(){
     		var _this = $(this)
-            require(['jsx!/js/components/'+$(this).data('component')], function (w) {
+            require(['/js/components/'+$(this).data('component')+'.js'], function (w) {
                 w.init(_this)
             });
         });
 
         $('[data-template]').each(function(){
             var _this = $(this)
-    		require(['jsx!/js/template/'+$(this).data('template')], function (w) {
+    		require(['/js/template/'+$(this).data('template') + '.js'], function (w) {
 				w.init(_this)
 			});
     	});    	
     }
+
 
     function genId(_this){
     	function s4() {

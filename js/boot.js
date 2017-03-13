@@ -1,4 +1,4 @@
-﻿
+
 // main config for requirejs
 require.config({
 	waitSeconds: 20,
@@ -11,14 +11,7 @@ require.config({
 		"react"			: "libs/react",
 		"ReactDOM"		: "libs/react-dom",
 		"global" 		: "/js/global",
-		"text"			: "libs/text",
-		"JSXTransformer": "libs/JSXTransformer",
-		"jsx"			: "jsx"
-	},
-    jsx : {
-        fileExtension : '.jsx',
-        harmony: true
-    },
+	}
 });
 
 var controller = document.getElementById('body').getAttribute('data-controller');
